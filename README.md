@@ -8,9 +8,9 @@ or via the following connection string -> 'jdbc:h2:mem:testdb'
 
 A Postman Collection is available inside the main directory to facilitate manual testing
 
-##Enpoints Exposed
+## Endpoints Exposed
 
-######1. Load Photographers:
+###### 1. Load Photographers:
 Given the fact that we use volatile (in-memory) storage, we have to load our Photographers after each application start
 - Method: POST
 - Endpoint: localhost:8080/booking/photographers
@@ -38,7 +38,7 @@ Given the fact that we use volatile (in-memory) storage, we have to load our Pho
 ]
 ```
 
-######2. Save an Order:
+###### 2. Save an Order:
 Create a new Order
 - Method: POST
 - Endpoint: localhost:8080/booking/orders
@@ -57,13 +57,13 @@ Create a new Order
   "orderStatus": ""
 }
 ```
-######3. Get an Order:
+###### 3. Get an Order:
 Retrieve an existing Order
 - Method: GET
 - Endpoint: localhost:8080/booking/orders/{orderId}
 
 
-######4.a Patch an Order:
+###### 4.a Patch an Order:
 Can be used to edit an existing order
 
 - Method: PATCH
@@ -84,7 +84,7 @@ Can be used to edit an existing order
 }
 ```
 
-######4.b Schedule an Order:
+###### 4.b Schedule an Order:
 This Endpoint is just a particular use of 4.1 Endpoint
 If the Order was initially Created without a DateTime, we use this endpoint to give an Order a DateTime and move into Scheduled status
 
@@ -97,7 +97,7 @@ If the Order was initially Created without a DateTime, we use this endpoint to g
 }
 ```
 
-######4.c Manually change Order status:
+###### 4.c Manually change Order status:
 This Endpoint is just a particular use of 4.1 Endpoint
 If the Order is initially Created without a DateTime, we use this endpoint to give an Order a DateTime and move into Scheduled status
 This Endpoint has strict validation rules:
@@ -114,13 +114,13 @@ This Endpoint has strict validation rules:
 }
 ```
 
-######5 Assign Photographer to Order
+###### 5 Assign Photographer to Order
 Assign a Photographer to an Order and move the Order in the Assigned status
 - Method: PATCH
 - Endpoint: localhost:8080/booking/orders/1/photographer/1
 - Request Body: none
 
-######6 Upload Photos
+###### 6 Upload Photos
 Endpoint used by Photographers to upload their photos to Order and change the Order status to Uploaded.
 Normally this would be a Multipart Request but in the Requirements docs received it was specified to use a simple String as no files have to actually be uploaded here.
 
@@ -131,7 +131,7 @@ Normally this would be a Multipart Request but in the Requirements docs received
 key: "photos" | value = "Photos"
 ```
 
-######7 Get Photos
+###### 7 Get Photos
 Endpoint used by Operator to check the Photos
 He can later use 4.c Endpoint to move the Order into either Completed or Assigned status
 - Method: GET
